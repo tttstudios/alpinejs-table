@@ -44,7 +44,10 @@ Built with [Laravel](https://laravel.com/), [Alpine.js](https://github.com/alpin
 ---
 
 <br />
-# <a id='dependencies'></a> Dependencies
+
+<a id='dependencies'></a>
+
+# Dependencies
 
 **Recommended:**
 
@@ -602,7 +605,9 @@ The column will not be displayed, but its value can still be accessed by `row` i
 
 ![Untitled%204.png](https://github.com/haoluo-ttt/img-hosting/blob/master/emv-docs/Untitled%204.png?raw=true)
 
-## <a id='extra-options-not-sortable'></a> 2. notSortable:
+<a id='extra-options-not-sortable'></a>
+
+## 2. notSortable:
 
 The column can not be sorted, but its value can still be accessed by `row` in closures. 
 
@@ -621,7 +626,9 @@ The column can not be sorted, but its value can still be accessed by `row` in cl
 
 ![Pasted_Image_2020-06-17__4_25_PM.png](https://github.com/haoluo-ttt/img-hosting/blob/master/emv-docs/Pasted_Image_2020-06-17__4_25_PM.png?raw=true)
 
-## <a id='extra-options-not-filterable'></a> 3. notFilterable:
+<a id='extra-options-not-filterable'></a>
+
+## 3. notFilterable:
 
 The column can not be filtered by text or dropdown, but its value can still be accessed by `row` in closures. 
 
@@ -644,9 +651,14 @@ The column can not be filtered by text or dropdown, but its value can still be a
 ---
 
 <br />
-# <a id='appendix'></a> Appendix
 
-## <a id='appendix-parameters'></a> Option Parameters
+<a id='appendix'></a>
+
+# Appendix
+
+<a id='appendix-parameters'></a>
+
+## Option Parameters
 
 |Parameter                 |type      |Example Value                       |Description                            |
 |--------------------------|----------|------------------------------------|---------------------------------------|
@@ -668,7 +680,10 @@ The column can not be filtered by text or dropdown, but its value can still be a
 ---
 
 <br />
-# <a id='notes'></a> Notes
+
+<a id='notes'></a>
+
+# Notes
 
 Alpinejs Table load all data into a single javascript instance. Performance can be compromised if there are too many data. 
 <br />
@@ -676,7 +691,9 @@ Alpinejs Table load all data into a single javascript instance. Performance can 
 ---
 
 <br />
-# <a id='license'></a> License
+<a id='license'></a>
+
+# License
 
 Alpinejs Table is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 <br />
@@ -684,7 +701,10 @@ Alpinejs Table is open-sourced software licensed under the [MIT license](https:/
 ---
 
 <br />
-# <a id='contributors'></a> Contributors
+
+<a id='contributors'></a>
+
+# Contributors
 
 [@haoluo-ttt](https://github.com/haoluo-ttt)
 
@@ -695,7 +715,10 @@ Alpinejs Table is open-sourced software licensed under the [MIT license](https:/
 ---
 
 <br />
-# <a id='ttt'></a> Premium Support By TTT Studios
+
+<a id='ttt'></a>
+
+# Premium Support By TTT Studios
 
 Alpinjs Table is presented by the web developing team at TTT Studios. We are a Digital Innovation Studio based out of Vancouver, Canada, delivering custom software and solutions that are designed and developed 100% in-house. The technologies we work with include AR & VR, IoT, AI, security & encryption, and cloud computing.
 
