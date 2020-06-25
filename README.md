@@ -34,7 +34,7 @@ Built with [Laravel](https://laravel.com/), [Alpine.js](https://github.com/alpin
     2. [notSortable](#extra-options-not-sortable)
     3. [notFilterable](#extra-options-not-filterable)
 - [Appendix](#appendix)
-    - [Option Parameters](#appendix-parameters)
+    1. [Option Parameters](#appendix-parameters)
 - [Notes](#note)
 - [Contributors](#contributors)
 - [License](#license)
@@ -44,7 +44,7 @@ Built with [Laravel](https://laravel.com/), [Alpine.js](https://github.com/alpin
 ---
 
 <br />
-# <a id="dependencies"></a> Dependencies
+# <a id='dependencies'></a> Dependencies
 
 **Recommended:**
 
@@ -57,15 +57,21 @@ You can use this package in older versions of Laravel, but extra installation st
 ---
 
 <br />
-# <a id="installation"></a> Installation
 
-## <a id="installation-via-composer"></a>  1. Via composer
+<a id='installation'></a>
+
+# Installation
+
+<a id='installation-via-composer'></a>
+
+## 1. Via composer
 
 ```bash
 composer require tttstudios/alpinejs-table
 ```
+<a id='installation-manual'></a>
 
-## <a id="installation-manual"></a>  2. Manual Installation
+## 2. Manual Installation
 
 ### For Laravel ≥ 5.7
 
@@ -119,7 +125,10 @@ composer dump-autoload
 ---
 
 <br />
-# <a id='basic-usage-bundled'></a> Basic Usage (Bundle)
+
+<a id='basic-usage-bundled'></a>
+
+# Basic Usage (Bundle)
 
 Alpinejs Table is shipped with 3 [Blade Aliases](https://laravel.com/docs/7.x/blade#including-subviews):
 
@@ -175,7 +184,9 @@ And this is what you get:
 
 ### For Laravel  < 5.7
 
-<a id='blade-call-include'></a> Prerequisite: Copy all the files under  `alpinejs-table/resources/views` to your own repo's `views/alpinejs-table` folder.
+<a id='blade-call-include'></a>
+
+Prerequisite: Copy all the files under  `alpinejs-table/resources/views` to your own repo's `views/alpinejs-table` folder.
 
 ```html
 # in example.blade.php:
@@ -191,7 +202,10 @@ And this is what you get:
 ---
 
 <br />
-# <a id='basic-usage-standalone'></a> Basic Usage (standalone)
+
+<a id='basic-usage-standalone'></a>
+
+# Basic Usage (standalone)
 
 If your app already has  [Alpine.js](https://github.com/alpinejs/alpine) imported, then you don't need to import the bundled javascript file. Instead, you can call `AlpineJsTableCore` . Example:
 
@@ -224,7 +238,10 @@ If your app already has  [Alpine.js](https://github.com/alpinejs/alpine) importe
 ---
 
 <br />
-# <a id='integration-with-your-own'></a> Integration with your own js/css
+
+<a id='integration-with-your-own'></a>
+
+# Integration with your own js/css
 
 You can tell that Alpinejs Table is using [moment.js](https://momentjs.com/) to parse date & time, and use [Tailwind CSS](https://tailwindcss.com/)  to compose styles. If your app has imported them in global scope, or if you want to integrate Alpinejs Table's source code into your app's bundled js & css, simple follow these steps (Laravel ≥5.7 only):
 
@@ -285,15 +302,22 @@ window.AlpinejsTablePlugin = AlpinejsTablePlugin;
 ---
 
 <br />
-# <a id='built-in-filter'></a> Built-in Filters
 
-## <a id='built-in-filter-text'></a> 1. Text Filter
+<a id='built-in-filter'></a>
+
+# Built-in Filters
+
+<a id='built-in-filter-text'></a>
+
+## 1. Text Filter
 
 Alpinejs Table generates a text filter for each column by default, which means, all columns can be filtered by text matching out of the box, unless you intentionally [disable it](#extra-options-not-filterable).
 
 ![2020-06-24_13.59.26.gif](https://github.com/haoluo-ttt/img-hosting/blob/master/emv-docs/2020-06-24_13.59.26.gif?raw=true)
 
-## <a id='built-in-filter-dropdown'></a> 2. Dropdown Filter
+<a id='built-in-filter-dropdown'></a>
+
+## 2. Dropdown Filter
 
 For limited data types, you may need a dropdown filter. For example: `status` may only have 2 valid values: `Active` or `Pending` . In this case, you can set it as a dropdown filter.
 
@@ -339,7 +363,9 @@ And this is what you'll get:
 
 ![Untitled.png](https://github.com/haoluo-ttt/img-hosting/blob/master/emv-docs/Untitled.png?raw=true)
 
-## <a id='built-in-filter-date'></a> 3. Date Filter
+<a id='built-in-filter-date'></a>
+
+## 3. Date Filter
 
 If some column is in date format. You may find it useful to define `dates` in options. 
 
@@ -387,9 +413,14 @@ $options=[
 ---
 
 <br />
-# <a id='customization'></a> Customizations
 
-## <a id='customization-cell-width'></a> 1. Customize Cell Width
+<a id='customization'></a>
+
+# Customizations
+
+<a id='customization-cell-width'></a>
+
+## 1. Customize Cell Width
 
 Alpinejs Table has a default cell width of `200px` for each column. You may customize the width of each cell by passing a javascript closure to `cellWidth(key)`
 
@@ -416,7 +447,9 @@ Refresh the page and you can get the new layout:
 
 ![Untitled%201.png](https://github.com/haoluo-ttt/img-hosting/blob/master/emv-docs/Untitled%201.png?raw=true)
 
-## <a id='1-customize-pagination'></a> 2. Customize Pagination
+<a id='1-customize-pagination'></a>
+
+## 2. Customize Pagination
 
 Alpinejs Table displays 10 entries per page by default. You can easily override it by setting `perPage`  in `options`:
 
@@ -444,7 +477,10 @@ Then You can see the settings in effect in bottom right of the table:
 ---
 
 <br />
-## <a id='customization-header-titles'></a> 3. Customize Header Titles
+
+<a id='customization-header-titles'></a>
+
+## 3. Customize Header Titles
 
 By default, Alpinejs Table transforms `key` into title case and display in header. For example: `user_email`  will be transformed into `User Email`.
 
@@ -474,7 +510,10 @@ In case you need to customize the title, you can use `titleRenderer(key)` :
 ---
 
 <br />
-## <a id='customization-cell-content'></a> 4. Customize Cell Content
+
+<a id='customization-cell-content'></a>
+
+## 4. Customize Cell Content
 
 Sometimes you need to display a transformed content for some cells. For example, you may want to show red font color for users with "Pending" status, or even add different action buttons for different cells . 
 
@@ -529,9 +568,14 @@ public function index() {
 ---
 
 <br />
-# <a id='extra-options'></a>Extra Options
 
-## <a id='extra-options-not-visible'></a> 1. notVisible:
+<a id='extra-options'></a>
+
+# Extra Options
+
+<a id='extra-options-not-visible'></a>
+
+## 1. notVisible:
 
 The column will not be displayed, but its value can still be accessed by `row` in closures. 
 
