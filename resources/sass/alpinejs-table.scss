@@ -1,0 +1,396 @@
+/* table container */
+
+.alpinejs-alpinejs-table-container {
+    @apply flex flex-col overflow-x-scroll mt-2 mb-3;
+}
+
+.alpinejs-table-layout {
+    @apply align-middle w-auto min-w-full inline-block border-b border-gray-100;
+}
+
+.alpinejs-table-layout > table {
+    @apply min-w-full border-0;
+}
+
+.alpinejs-table-layout > table > thead {
+    @apply flex flex-col;
+}
+
+.alpinejs-table-layout > table > thead > tr {
+    @apply bg-blue-800;
+}
+
+.alpinejs-table-layout > table > thead > tr > th {
+    @apply box-border px-4 pt-3 pb-1 text-base leading-5;
+}
+
+.alpinejs-table-layout > table > thead > tr > th:not(:last-child) {
+    @apply border-r border-white;
+}
+
+.alpinejs-table-layout > table > thead > tr > th > div {
+    @apply flex w-full justify-start items-center mb-2;
+}
+
+.alpinejs-table-layout > table > thead > tr > th > div > strong {
+    @apply mr-2 font-semibold tracking-wide text-base text-white;
+}
+
+/* table body */
+
+.alpinejs-table-layout > table > tbody {
+    @apply flex flex-col overflow-y-scroll;
+    min-height: 440px;
+    height: calc(100vh - 350px);
+}
+
+.alpinejs-table-layout > table > tbody > tr:nth-child(odd) {
+    @apply bg-white;
+}
+
+.alpinejs-table-layout > table > tbody > tr:nth-child(even) {
+    @apply bg-gray-100;
+}
+
+.alpinejs-table-layout > table > tbody > tr > td {
+    @apply box-border py-2 text-gray-800 break-all;
+}
+
+.alpinejs-table-layout > table > tbody > tr > td:not(:last-child) {
+    @apply border-r border-gray-100;
+}
+
+.alpinejs-table-layout > table > tbody > tr > td > div {
+    @apply block px-1;
+}
+
+.alpinejs-table-layout > table > tbody > tr > td > span {
+    @apply inline-block w-full text-base px-4;
+}
+
+.alpinejs-table-layout > table > tbody > tr > td > span > a {
+    @apply text-blue-400 underline;
+}
+
+.alpinejs-table-layout > table > tbody > tr > td > span > a:hover {
+    @apply no-underline;
+}
+
+/* sort button */
+
+.alpinejs-table-sort-button {
+    @apply relative inline-flex items-center text-xs text-white transition ease-in-out duration-150;
+}
+
+.alpinejs-table-sort-button > svg {
+    @apply text-gray-400;
+    width: 9px;
+    height: 13px;
+}
+
+.alpinejs-table-sort-button:hover {
+    @apply outline-none;
+}
+
+.alpinejs-table-sort-button:focus {
+    @apply outline-none;
+}
+
+.alpinejs-table-sort-button:hover > svg.none,
+.alpinejs-table-sort-button > svg.active {
+    @apply text-white;
+}
+
+/* filter by text */
+
+.alpinejs-table-filter-text {
+    @apply relative w-full;
+}
+
+.alpinejs-table-filter-text:focus-within {
+    @apply z-10;
+}
+
+.alpinejs-table-filter-text > input {
+    @apply appearance-none block w-full leading-8 pl-2 pr-10 text-black text-sm transition duration-150 ease-in-out shadow-sm  h-8;
+}
+
+.alpinejs-table-filter-text > input::placeholder {
+    @apply text-gray-500 relative text-xs;
+}
+
+.alpinejs-table-filter-text > input:hover {
+    @apply outline-none;
+}
+
+.alpinejs-table-filter-text > input:focus {
+    @apply outline-none;
+}
+
+/* filter by date picker */
+
+.alpinejs-table-filter-date {
+    @apply relative w-full inline-block z-10;
+}
+
+.alpinejs-table-filter-date > input {
+    @apply appearance-none block w-full leading-8 pl-10 pr-10 text-black text-sm transition duration-150 ease-in-out shadow-sm  cursor-pointer h-8;
+}
+
+.alpinejs-table-filter-date > input:focus {
+    @apply outline-none;
+}
+
+.alpinejs-table-filter-date > input::placeholder {
+    @apply text-gray-500 relative text-xs;
+}
+
+.alpinejs-table-filter-date > svg {
+    @apply absolute left-0 ml-2 text-gray-500 w-6 h-6;
+    top: 3px;
+}
+
+/* X button (click to clean keyword) */
+
+.alpinejs-table-filter-text > button,
+.alpinejs-table-filter-date > button {
+    @apply absolute inset-y-0 right-0 pr-2 flex items-center text-gray-900;
+}
+
+.alpinejs-table-filter-text > button > svg,
+.alpinejs-table-filter-date > button > svg {
+    @apply w-4 h-4;
+}
+
+.alpinejs-table-filter-text > button:hover,
+.alpinejs-table-filter-date > button:hover {
+    @apply text-black;
+}
+
+.alpinejs-table-filter-text > button:focus,
+.alpinejs-table-filter-date > button:focus {
+    @apply outline-none shadow-none;
+}
+
+/* filter by dropdown */
+
+.alpinejs-table-filter-dropdown {
+    @apply relative inline-block z-10;
+}
+
+.alpinejs-table-filter-dropdown > div {
+    @apply w-full;
+}
+
+.alpinejs-table-filter-dropdown > div > span {
+    @apply inline-block w-full;
+}
+
+.alpinejs-table-filter-dropdown > div > span > button {
+    @apply inline-flex justify-between items-center w-full px-2 bg-white text-gray-500 items-center transition ease-in-out duration-150 overflow-hidden  h-8;
+}
+
+.alpinejs-table-filter-dropdown > div > span > button > span {
+    @apply inline-flex leading-none text-xs;
+}
+
+.alpinejs-table-filter-dropdown > div > span > button > svg {
+    @apply inline-flex -mr-1 ml-2 h-4 w-4;
+}
+
+.alpinejs-table-filter-dropdown > div > span > button:hover {
+    @apply text-gray-800;
+}
+
+.alpinejs-table-filter-dropdown > div > span > button.active {
+    @apply text-gray-800 text-sm;
+}
+
+.alpinejs-table-filter-dropdown > div > span > button.active > span {
+    @apply text-sm;
+}
+
+.alpinejs-table-filter-dropdown > div > span > button:focus {
+    @apply outline-none shadow-none;
+}
+
+.alpinejs-table-filter-dropdown > div.dropdown-options {
+    @apply w-full absolute z-20 left-0 border border-gray-300 bg-white shadow-lg transition ease-in-out duration-150;
+    top: 32px;
+}
+
+.alpinejs-table-filter-dropdown > div.dropdown-options > button {
+    @apply block w-full px-2 py-3 text-sm text-left leading-5 text-gray-800 font-normal truncate;
+}
+
+.alpinejs-table-filter-dropdown > div.dropdown-options > button:not(:last-child) {
+    @apply mb-px;
+}
+
+.alpinejs-table-filter-dropdown > div.dropdown-options > button:hover {
+    @apply bg-yellow-200;
+}
+
+.alpinejs-table-filter-dropdown > div.dropdown-options > button.active {
+    @apply bg-yellow-200;
+}
+
+/* pagination: */
+
+.alpinejs-table-pagination {
+    @apply py-6 mb-10 flex items-center justify-between;
+}
+
+.alpinejs-table-pagination .prev-btn,
+.alpinejs-table-pagination .next-btn {
+    @apply -mt-px inline-flex items-center items-center text-gray-800 transition ease-in-out duration-150 text-xs;
+}
+
+.alpinejs-table-pagination .prev-btn > svg,
+.alpinejs-table-pagination .next-btn > svg {
+    @apply border border-gray-800 mx-2 w-8 h-8 bg-gray-100;
+}
+
+.alpinejs-table-pagination .prev-btn:hover:enabled > svg,
+.alpinejs-table-pagination .next-btn:hover:enabled > svg {
+    @apply bg-white text-black;
+}
+
+.alpinejs-table-pagination .prev-btn:focus:enabled,
+.alpinejs-table-pagination .next-btn:focus:enabled {
+    @apply outline-none shadow-none;
+}
+
+.alpinejs-table-pagination .prev-btn:active:enabled,
+.alpinejs-table-pagination .next-btn:active:enabled {
+    @apply outline-none shadow-none;
+}
+
+.alpinejs-table-pagination .prev-btn:disabled,
+.alpinejs-table-pagination .next-btn:disabled {
+    @apply cursor-not-allowed opacity-50;
+}
+
+.alpinejs-table-pagination .number-btn {
+    @apply -mt-px px-1 mx-1 inline-flex font-semibold items-center text-sm text-gray-800 transition ease-in-out duration-150;
+}
+
+.alpinejs-table-pagination .number-btn:hover {
+    @apply text-blue-400 outline-none shadow-none;
+}
+
+.alpinejs-table-pagination .number-btn:focus {
+    @apply outline-none shadow-none;
+}
+
+.alpinejs-table-pagination .number-btn.active,
+.alpinejs-table-pagination .number-btn.active:focus {
+    @apply outline-none shadow-none text-blue-400;
+}
+
+.alpinejs-table-pagination .number-btn:disabled,
+.alpinejs-table-pagination .number-btn:active:disabled,
+.alpinejs-table-pagination .number-btn:hover:disabled,
+.alpinejs-table-pagination .number-btn:focus:disabled {
+    @apply outline-none shadow-none text-gray-500 cursor-not-allowed;
+}
+
+.alpinejs-table-pagination .select-perpage {
+    @apply inline-block mx-1 px-6 h-8 bg-gray-100 border border-gray-800 rounded;
+}
+
+.alpinejs-table-not-found {
+    @apply text-2xl font-bold leading-normal text-center tracking-normal text-gray-400;
+}
+
+/**
+ * @bevacqua/rome - Customizable date (and time) picker. Opt-in UI, no jQuery!
+ * @version v3.0.3
+ * @link https://github.com/bevacqua/rome
+ * @license MIT
+ */
+
+.alpinejs-table-rome-container {
+    @apply hidden rounded shadow bg-white px-4 py-4 text-center w-auto h-auto mt-px;
+}
+
+.alpinejs-table-rome-container-attachment {
+    @apply absolute;
+}
+
+.alpinejs-table-rome-month {
+    @apply w-full p-0 inline-block mr-0;
+}
+
+.alpinejs-table-rome-month:last-child {
+    @apply mr-0;
+}
+
+.alpinejs-table-rome-month-label {
+    @apply mr-0 font-bold text-center text-black text-base leading-normal py-2 px-3;
+}
+
+.alpinejs-table-rome-back,
+.alpinejs-table-rome-next {
+    @apply cursor-pointer border-none outline-none bg-transparent m-0 py-2 px-3;
+}
+
+.alpinejs-table-rome-back[disabled],
+.alpinejs-table-rome-next[disabled] {
+    @apply cursor-default;
+}
+
+.alpinejs-table-rome-back {
+    @apply float-left;
+}
+
+.alpinejs-table-rome-next {
+    @apply float-right;
+}
+
+.alpinejs-table-rome-back:before {
+    @apply block text-blue-800;
+    content: "\2190";
+}
+
+.alpinejs-table-rome-next:before {
+    @apply block text-blue-800;
+    content: "\2192";
+}
+
+.alpinejs-table-rome-day-head {
+    @apply text-center text-gray-600 text-sm py-2;
+}
+
+.alpinejs-table-rome-day-body {
+    @apply cursor-pointer text-center text-black m-0 text-sm py-1 px-1;
+}
+
+.alpinejs-table-rome-day-body > span {
+    @apply cursor-pointer inline-block rounded-full bg-white text-sm w-8 h-8 leading-8;
+}
+
+.alpinejs-table-rome-day-body > span:hover,
+.alpinejs-table-rome-day-selected > span,
+.alpinejs-table-rome-time-selected > span,
+.alpinejs-table-rome-time-option:hover > span {
+    @apply cursor-pointer inline-block bg-yellow-500;
+}
+
+.alpinejs-table-rome-day-prev-month,
+.alpinejs-table-rome-day-next-month {
+    @apply text-white;
+}
+
+.alpinejs-table-rome-day-prev-month > span,
+.alpinejs-table-rome-day-next-month > span {
+    @apply hidden;
+}
+
+.alpinejs-table-rome-day-disabled {
+    @apply cursor-default text-gray-100;
+}
+
+.alpinejs-table-rome-day-concealed {
+    @apply invisible;
+}

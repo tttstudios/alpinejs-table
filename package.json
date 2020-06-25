@@ -1,0 +1,41 @@
+{
+  "name": "alpinejs-table",
+  "version": "1.0.0",
+  "scripts": {
+    "prod": "npm run build",
+    "build": "npm run compile:js.umd && npm run rename:js-to-blade && npm run compile:css && npm run rename:css-to-blade",
+    "compile:js.umd": "cross-env NODE_ENV=production webpack -p --config webpack.config.babel.js",
+    "rename:js-to-blade": "mv resources/views/bundle.js resources/views/js-bundle.blade.php && mv resources/views/core.js resources/views/js-core.blade.php",
+    "compile:css": "cross-env NODE_ENV=production postcss resources/sass/tailwind-base.scss -o resources/views/tailwind-base.css && postcss resources/sass/alpinejs-table.scss -o resources/views/alpinejs-table.css",
+    "rename:css-to-blade": "mv resources/views/tailwind-base.css resources/views/css.blade.php && cat resources/views/alpinejs-table.css >> resources/views/css.blade.php && rm -f resources/views/alpinejs-table.css"
+  },
+  "keywords": [
+    "laravel",
+    "laravel package",
+    "alpinejs",
+    "table",
+    "component",
+    "tailwind"
+  ],
+  "author": "TTT Studio",
+  "license": "MIT",
+  "dependencies": {
+    "@bevacqua/rome": "^3.0.3",
+    "alpinejs": "^2.3.5",
+    "moment": "^2.26.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "moment-locales-webpack-plugin": "^1.2.0",
+    "postcss-cli": "^7.1.1",
+    "postcss-import": "^12.0.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
