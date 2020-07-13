@@ -18,26 +18,26 @@ Built with [Laravel](https://laravel.com/), [Alpine.js](https://github.com/alpin
 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
-    1. [Via Composer](#installation-via-composer)
-    2. [Manual Installation](#installation-manual)
+	1. [Via Composer](#installation-via-composer)
+	2. [Manual Installation](#installation-manual)
 - [Basic Usage (bundled)](#basic-usage-bundled)
 - [Basic Usage (standalone)](#basic-usage-standalone)
 - [Integration with your own js/css](#integration-with-your-own)
 - [Built-in Filters](#built-in-filter)
-    1. [Text Filter](#built-in-filter-text)
-    2. [Dropdown Filter](#built-in-filter-dropdown)
-    3. [Date Filter](#built-in-filter-date)
+	1. [Text Filter](#built-in-filter-text)
+	2. [Dropdown Filter](#built-in-filter-dropdown)
+	3. [Date Filter](#built-in-filter-date)
 - [Customization](#customization)
-    1. [Customize Cell Width](#customization-cell-width)
-    2. [Customize Pagination](#customization-pagination)
-    3. [Customize Header Titles](#customization-header-titles)
-    4. [Customize Cell Content](#customization-cell-content)
+	1. [Customize Cell Width](#customization-cell-width)
+	2. [Customize Pagination](#customization-pagination)
+	3. [Customize Header Titles](#customization-header-titles)
+	4. [Customize Cell Content](#customization-cell-content)
 - [Extra Options:](#extra-options)
-    1. [notVisible](#extra-options-not-visible)
-    2. [notSortable](#extra-options-not-sortable)
-    3. [notFilterable](#extra-options-not-filterable)
+	1. [notVisible](#extra-options-not-visible)
+	2. [notSortable](#extra-options-not-sortable)
+	3. [notFilterable](#extra-options-not-filterable)
 - [Appendix](#appendix)
-    1. [Option Parameters](#appendix-parameters)
+	1. [Option Parameters](#appendix-parameters)
 - [Notes](#note)
 - [Contributors](#contributors)
 - [License](#license)
@@ -90,19 +90,17 @@ composer require tttstudios/alpinejs-table
 │   ├── composer.json
 │   ├── vendor
 │   └── packages
-│       └── tttstudios
-│           └── alpinejs-table
+│	   └── tttstudios
+│		   └── alpinejs-table
 ```
 
 2) Add one line to `your-repo/composer.json`:
 
 ```json
 "autoload": {
-		//...
-    "psr-4": {
-        //....
-        "Tttstudios\\AlpinejsTable\\": "packages/tttstudios/alpinejs-table/src/"
-    },
+	"psr-4": {
+		"Tttstudios\\AlpinejsTable\\": "packages/tttstudios/alpinejs-table/src/"
+	},
 }
 ```
 
@@ -110,8 +108,7 @@ composer require tttstudios/alpinejs-table
 
 ```php
 'providers' => [
-			//...
-			Tttstudios\AlpinejsTable\Providers\AlpinejsTableServiceProvider::class
+	Tttstudios\AlpinejsTable\Providers\AlpinejsTableServiceProvider::class
 ]
 ```
 
@@ -138,11 +135,11 @@ composer dump-autoload
 
 Alpinejs Table is shipped with 3 [Blade Aliases](https://laravel.com/docs/7.x/blade#including-subviews):
 
-|Blade Alias               |Description|
+|Blade Alias			   |Description|
 |--------------------------|-----------|
-| `AlpinejsTableBundle`    | import a bundled javascript file with all its dependencies (including [Alpine.js](https://github.com/alpinejs/alpine) )|
-| `AlpinejsTableHtml`      | import a blade view file|
-| `AlpinejsTableCss`       | import all styles required by the table|
+| `AlpinejsTableBundle`	| import a bundled javascript file with all its dependencies (including [Alpine.js](https://github.com/alpinejs/alpine) )|
+| `AlpinejsTableHtml`	  | import a blade view file|
+| `AlpinejsTableCss`	   | import all styles required by the table|
 
 
 ### For Laravel  ≥ 5.7
@@ -157,12 +154,12 @@ You can use Alpinejs Table out of the box. Simply pass an array to  AlpineHtml()
 public function index() {
 
 	$users=\App\User::get()->map(function ($user) {
-        return [
-            'status' => $user->status,
-            'name'   => $user->name,
-            'email'  => $user->email,
-					];
-    })->all();
+		return [
+			'status' => $user->status,
+			'name'   => $user->name,
+			'email'  => $user->email,
+		];
+	})->all();
 	
 	return view('example', compact('users'));
 }
@@ -337,16 +334,16 @@ For limited data types, you may need a dropdown filter. For example: `status` ma
 public function index() {
 
 	$users=\App\User::get()->map(function ($user) {
-        return [
-            'status' => $user->status,
-            'name'   => $user->name,
-            'email'  => $user->email,
-					];
-    })->all();
+		return [
+			'status' => $user->status,
+			'name'   => $user->name,
+			'email'  => $user->email,
+		];
+	})->all();
 	
-		$options=[
-         'dropdowns' => ['status'],
-    ];
+	$options=[
+		 'dropdowns' => ['status'],
+	];
 
 	return view('example', compact('users', 'options'));
 }
@@ -383,18 +380,18 @@ If some column is in date format. You may find it useful to define `dates` in op
 public function index() {
 
 	$users=\App\User::get()->map(function ($user) {
-        return [
-            'status' => $user->status, // "Active" or "Pending"
-            'name'   => $user->name,
-						// must be in ISO 8601 format, e.g.: 2020-05-27T18:26:58+00:00
-            'birthday'  => $user->birthday->toIso8601String()
-					];
-     })->all();
+		return [
+			'status' => $user->status, // "Active" or "Pending"
+			'name'   => $user->name,
+			// must be in ISO 8601 format, e.g.: 2020-05-27T18:26:58+00:00
+			'birthday'  => $user->birthday->toIso8601String()
+		];
+	})->all();
 	
 	$options=[
-         'dropdowns' => ['status'],
-         'dates' => ['birthday'],
-    ];
+		'dropdowns' => ['status'],
+		'dates' => ['birthday'],
+	];
 
 	return view('example', compact('users', 'options'));
 }
@@ -408,7 +405,7 @@ You can even set your own date format:
 
 ```php
 $options=[
-    'dates' => ['birthday'],
+	'dates' => ['birthday'],
 	'dateFormat' => 'YYYY/M/D',
   ];
 ```
@@ -438,14 +435,14 @@ $options=[
 
 		'cellWidth(key)'=>' 
 
-        if(key=="status")
-            return `120px`;
+		if(key=="status")
+			return `120px`;
 
-        if(key=="email")
-            return `400px`;
+		if(key=="email")
+			return `400px`;
 
-        return `200px`;
-    ',
+		return `200px`;
+	',
 ];
 ```
 
@@ -463,7 +460,7 @@ Alpinejs Table displays 10 entries per page by default. You can easily override 
 
 ```php
 $options=[
-    'perPage' => 24
+	'perPage' => 24
 ];
 ```
 
@@ -471,7 +468,7 @@ You can also set the options to allow visitors on change perPage on the fly:
 
 ```php
 $options=[
-    'perPageOptions' => [24, 48, 96]
+	'perPageOptions' => [24, 48, 96]
 ];
 ```
 
@@ -499,11 +496,11 @@ In case you need to customize the title, you can use `titleRenderer(key)` :
 		
 	$options=[
 		'titleRenderer(key)'=>'
-	        if(key=="id")
-	            return `User ID`;
+			if(key=="id")
+				return `User ID`;
 
 			// by default: return nothing
-	    '
+		'
 	];
 
 ```
@@ -533,32 +530,32 @@ Here comes the magic of `cellRenderer(key,cell,row)` :
 public function index() {
 
 	$users=\App\User::get()->map(function ($user) {
-        return [
-			'id'     => $user->id,
-            'status' => $user->status,
-            'name'   => $user->name,
-            'email'  => $user->email,
+		return [
+			'id'	 => $user->id,
+			'status' => $user->status,
+			'name'   => $user->name,
+			'email'  => $user->email,
 		];
-     })->all();
+	 })->all();
 	
 		
 	$options=[
 		'cellRenderer(key,cell,row)'=>'
 
-	        if(key == "status" && cell.value == "Pending")
-	            return `<span style="color:red">` + cell.value + `</span>`;
+			if(key == "status" && cell.value == "Pending")
+				return `<span style="color:red">` + cell.value + `</span>`;
 
-	        if(key == "name")
-	        {
-	        	const isPending = row.status.value == "Pending";
+			if(key == "name")
+			{
+				const isPending = row.status.value == "Pending";
 				return cell.value 
 						+ `<a class="`+(isPending ? "btn-dark" : "btn-green") + ` float-right" href="/users/` + row.id.value + `">`
 								+ (isPending ? "Approve" : "Details")
 						+`</a> `;
-	        }
+			}
 
-	        return cell.value; // default
-	    '
+			return cell.value; // default
+		'
 	];
 
 	return view('example', compact('users', 'options'));
@@ -593,13 +590,13 @@ The column will not be displayed, but its value can still be accessed by `row` i
 	$options=[
 		'notVisible' => ['id']
 		'cellRenderer(key,cell,row)'=>'
-	        if(key=="name")
-	            return `<b style="color:blue">ID #`
-	            		+ row.id.value 
-	            		+ "</b>: "
-	            		+ cell.value;
-	        return cell.value;
-	    '
+			if(key=="name")
+				return `<b style="color:blue">ID #`
+						+ row.id.value 
+						+ "</b>: "
+						+ cell.value;
+			return cell.value;
+		'
 	];
 
 ```
