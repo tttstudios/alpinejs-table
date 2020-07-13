@@ -1,3 +1,6 @@
+![Cover.png](https://github.com/haoluo-ttt/img-hosting/blob/master/emv-docs/Github-Cover_AlpinejsTable-AL.png?raw=true)
+
+
 # Alpinejs Table
 
 Alpinejs Table is a Laravel package to inject a simple table view component into any Laravel project.
